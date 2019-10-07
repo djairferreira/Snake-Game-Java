@@ -17,6 +17,10 @@ public class Snake extends BaseLimitedDrawable {
 	}
 	@Override
 	public void draw(Graphics2D g2d) {
+		if(Math.abs(HEAD.X)> this.MAX_X)
+			HEAD.X = -HEAD.X;
+		if(Math.abs(HEAD.Y)> this.MAX_Y)
+			HEAD.Y = -HEAD.Y;
 		HEAD.moveIncremental(fluX, fluY);
 		HEAD.draw(g2d);
 		
